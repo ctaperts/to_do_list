@@ -1,18 +1,30 @@
-<div class="well">
+<div class="row">
+  <div class="col-md-offset-1">
+    <div class="col-md-10">
 
-  <%= user_task.description %>
+      <div class="well">
 
-  <%= user_task.due %>
+	<span class="task">
+	  <%= link_to user_task.description, 
+		      user_task,
+		      remote: true,
+		      method: :delete,
+		      data: { confirm: "Are you sure?" } %>
+	</span>
 
-  <%= link_to "Edit", 
-    edit_user_task_path(user_task), 
-    remote: true %>
 
-  <%= link_to "Delete", 
-    user_task, 
-    remote: true, 
-    method: :delete,
-    data: { confirm: "Are you sure?" } %>
 
+
+	<%= link_to fa_icon("pencil", text: "Edit"), 
+		    edit_user_task_path(user_task), 
+		    remote: true %>
+
+
+	<span class="pull-right">
+	  <%= user_task.due %>
+	</span>
+      </div>
+    </div>
+  </div>
 </div>
 
