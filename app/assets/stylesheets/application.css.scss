@@ -15,3 +15,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "bootstrap-datepicker3";
+
+#task-form {
+  display:none;
+}
+a:hover {
+  text-decoration:none;
+
+}
+
+.well .task a:hover {
+  text-decoration:line-through;
+}
+
+.add-task {
+  margin-top:30px;
+  margin-bottom:30px;
+}
