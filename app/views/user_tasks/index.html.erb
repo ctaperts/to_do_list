@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tasks</h1>
+<h1 class="text-center">Tasks</h1>
+<div class="text-center">
+<%= link_to new_user_task_path, remote: true do %>
+  <button class="btn btn-sm btn-default add-task">
+    <%= fa_icon "plus"  %> Add Task
 
-<%= link_to 'New User Task', new_user_task_path, remote: true, class: 'btn btn-sm btn-default' %>
+  </button>
+<% end %>
+</div>
+<br>
 
 <div id="task-form">
 </div>
