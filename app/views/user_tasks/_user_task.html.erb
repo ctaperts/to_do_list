@@ -1,5 +1,6 @@
 <div class="well">
   <%= user_task.description %>
   <%= user_task.due %>
+  <%= link_to "Edit", edit_user_task_path(user_task), remote: true %>
 </div>
 
