@@ -1,7 +1,7 @@
-$('#task-form')
-  .html("<%= j (render 'form') %>")
+$("#task-form-edit_<%= @user_task.id %>")
+  .html("<%= j (render 'form_edit') %>")
   .slideToggle(350);
 
-<%= render 'datepicker' %>
+<%= render 'datepicker_edit' %>
 
 
