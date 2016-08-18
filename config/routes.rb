@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback' => 'session#create'
 
-  get '/signout' => 'session#destroy', as: :signout
+  get '/signout' => 'sessions#destroy', as: :signout
+
+  get '/signin' => 'sessions#new', as: :signin
 
   root 'user_tasks#index'
 
