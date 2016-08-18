@@ -1,6 +1,7 @@
 class UserTasksController < ApplicationController
   before_action :set_user_task, only: [:show, :edit, :update, :destroy]
   before_action :all_tasks, only: [:index, :create, :update, :update, :destroy]
+  before_action :authenticate! 
 
   # GET /user_tasks
   # GET /user_tasks.json
@@ -69,6 +70,11 @@ class UserTasksController < ApplicationController
   end
 
   private
+  
+  def authenticate!
+    redirect_to :signin unless current_user
+  end
+
   
   def all_tasks
     @user_tasks = UserTask.order(:due)

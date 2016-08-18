@@ -22,11 +22,12 @@
 	    <%= link_to fa_icon('sign-out', text: "Sign out"), signout_path, id: 'sign_out' %>
 	  </li>
 	  <li>
-	    <%= img_tag current_user.small_image, class: "img-responsive" %>
+	    <%= image_tag current_user.small_image, class: "img-responsive" %>
 	  </li>
 	<% else %>
 	  <li>
 	    <%= link_to fa_icon('sign-in', text: "Sign in with facebook"), '/auth/facebook', id: 'sign_in' %> 
+	  </li>
 	<% end %>
 
       </ul>
