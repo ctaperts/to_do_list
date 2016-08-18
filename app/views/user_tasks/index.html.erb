@@ -6,9 +6,13 @@
       <h1 class="text-center">Tasks</h1>
       <div class="text-center">
       <%= link_to new_user_task_path, remote: true do %>
+	  <% if @user_tasks.size == 0 %>
+	    <div class="text-center">
+	      <%= image_tag("pad.jpg") %>
+	    </div>
+	  <% end %>
 	<button class="btn btn-sm btn-default add-task">
 	  <%= fa_icon "plus"  %> Add Task
-
 	</button>
       <% end %>
       </div>
@@ -17,6 +21,7 @@
       <div id="tasks">
 	<%= render @user_tasks %>
       </div>
+      <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
 
     </div>
   </div>

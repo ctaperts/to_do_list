@@ -5,6 +5,7 @@ class UserTasksController < ApplicationController
   # GET /user_tasks
   # GET /user_tasks.json
   def index
+    @user_tasks = UserTask.paginate(page: params[:page], per_page: 3)
     #@user_tasks = UserTask.all
   end
 
