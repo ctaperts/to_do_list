@@ -3,8 +3,8 @@
   
     <div class="form-inputs">
       <%= f.input :description, as: :text, placeholder: "Make Grocerys" %>
-      <%# f.input :due, as: :string, placeholder: "Today" %>
-      <input name="user_task[due]" remote="true" id="user_task_due" type="string" data-provide='datepicker' >
+      <%# f.input :due, as: :string, class: "datepicker_edit", placeholder: "Today" %>
+      <input name="user_task[due]" remote="true" class="datepicker_edit form-control form-group" placeholder="New Date" >
     </div>
 
     <div class="form-actions">
