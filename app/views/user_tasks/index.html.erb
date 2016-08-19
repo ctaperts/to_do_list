@@ -6,8 +6,8 @@
       <h1 class="text-center">Tasks</h1>
       <div class="text-center">
       <%= link_to new_user_task_path, remote: true do %>
-	  <% if @user_tasks.size == 0 %>
-	    <div class="text-center" id="task-splash">
+	  <% if @user_tasks.empty? %>
+	    <div class="text-center" id="splash-up">
 	      <%= image_tag("pad.jpg") %>
 	    </div>
 	  <% end %>

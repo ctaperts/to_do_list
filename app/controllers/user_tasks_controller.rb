@@ -63,6 +63,7 @@ class UserTasksController < ApplicationController
   # DELETE /user_tasks/1
   # DELETE /user_tasks/1.json
   def destroy
+
     @user_task.destroy
     respond_to do |format|
       format.html { redirect_to user_tasks_url }

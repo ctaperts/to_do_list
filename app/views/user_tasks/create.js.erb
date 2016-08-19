@@ -1,3 +1,17 @@
 $('#tasks').html("<%= j (render @user_tasks) %>");
 
 $('#task-form').slideUp(350);
+
+
+$(document).ready(function() {
+    $("#splash-up").click(function(){
+        $("#splash-up").slideUp(600,"swing");
+    });
+
+    //Bad code: 
+    //$("#splash").delay(5000).slideUp(3000,"swing");
+
+    //Use setTimeOut 
+    setTimeout(function (){$("#splash-up").slideUp(600,"swing");} ,10);
+
+});

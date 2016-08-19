@@ -18,7 +18,9 @@
 
 
 	<span class="pull-right">
-	  <%= user_task.due.stamp('Monday, June 16th, 2001') %>
+	  <% if user_task.due != nil %>
+	    <%= user_task.due.stamp('Monday, June 16th, 2001') %>
+	  <% end %>
 	</span>
 	<div style="display:none;" id="task-form-edit_<%= user_task.id %>"></div>
     </div>
