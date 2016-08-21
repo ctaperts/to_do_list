@@ -19,9 +19,9 @@
 
       <div id="task-form"></div>
       <div id="tasks">
-	<%= render @user_tasks %>
+	<%= render 'user_task' %>
       </div>
-      <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
+      <%# will_paginate @collection, renderer: BootstrapPagination::Rails %>
 
     </div>
   </div>

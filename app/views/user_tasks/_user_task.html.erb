@@ -1,27 +1,31 @@
 
-      <div class="well">
+<% @user_tasks.uniq.pluck(:due).each do |task_due| %>
+  <div class="well">
+    <span class="pull-right">
+      <% if task_due != nil %>
+	<%= task_due.stamp('Monday, June 16th, 2001') %>
+      <% end %>
+    </span>
+    <% @user_tasks.where(due: task_due).each do |task| %>
 
+      <ul class="list-unstyled">
 	<span class="task">
-	  <%= link_to user_task.description, 
-		      user_task,
-		      remote: true,
-		      method: :delete,
-		      data: { confirm: "Are you sure?" } %>
+	    <li>
+	      <%= link_to task.description, 
+			  task,
+			  remote: true,
+			  method: :delete,
+			  data: { confirm: "Are you sure?" } %>
 	</span>
 
+	    <%= link_to fa_icon("pencil", text: "Edit"), 
+			edit_user_task_path(task), 
+			remote: true %>
+	    <div style="display:none;" id="task-form-edit_<%= task.id %>"></div>
 
+    <% end %>
 
-
-	<%= link_to fa_icon("pencil", text: "Edit"), 
-		    edit_user_task_path(user_task), 
-		    remote: true %>
-
-
-	<span class="pull-right">
-	  <% if user_task.due != nil %>
-	    <%= user_task.due.stamp('Monday, June 16th, 2001') %>
-	  <% end %>
-	</span>
-	<div style="display:none;" id="task-form-edit_<%= user_task.id %>"></div>
-    </div>
-
+	    </li>
+      </ul>
+  </div>
+<% end %>

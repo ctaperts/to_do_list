@@ -8,7 +8,7 @@ class UserTasksController < ApplicationController
   # GET /user_tasks
   # GET /user_tasks.json
   def index
-    @user_tasks = UserTask.paginate(page: params[:page], per_page: 3)
+    #@user_tasks = UserTask.paginate(page: params[:page], per_page: 3)
     #@user_tasks = UserTask.all
   end
 
@@ -80,7 +80,7 @@ class UserTasksController < ApplicationController
 
   
   def all_tasks
-    @user_tasks = UserTask.paginate(page: params[:page], per_page: 3)
+    #@user_tasks = UserTask.paginate(page: params[:page], per_page: 3)
     @user_tasks = current_user.user_tasks.order(:due)
   end
 
